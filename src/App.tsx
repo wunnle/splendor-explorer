@@ -139,7 +139,7 @@ function App() {
       if (tierFilter.size && !tierFilter.has(card.level)) return false
       if (cardColorFilter.size && !cardColorFilter.has(card.color as ColorKey)) return false
       if (onlyAffordable) {
-        const canAfford = Object.entries(card.cost).every(([color, cost]) => (hand[color] ?? 0) >= cost)
+        const canAfford = Object.entries(card.cost).every(([color, cost]) => (hand[color as ColorKey] ?? 0) >= cost)
         if (!canAfford) return false
       }
       return true
