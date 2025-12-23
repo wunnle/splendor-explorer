@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 import './App.css'
 import type { Card } from './components/Card'
 import { CardView } from './components/Card'
@@ -156,6 +157,7 @@ function App() {
 
   return (
     <div className="app-layout">
+      <Analytics />
       <Sidebar bank={bank} hand={hand} onIncrement={takeBankGem} onDecrement={returnHandGem} onClear={clearHand} />
       <div className="page">
         <header className="hero">
