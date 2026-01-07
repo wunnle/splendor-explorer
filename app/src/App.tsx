@@ -1,5 +1,4 @@
 import { useEffect, useMemo, useState } from 'react'
-import { Analytics } from '@vercel/analytics/react'
 import './App.css'
 import type { Card } from './components/Card'
 import { CardView } from './components/Card'
@@ -157,7 +156,6 @@ function App() {
 
   return (
     <div className="app-layout">
-      <Analytics  />
       <Sidebar bank={bank} hand={hand} onIncrement={takeBankGem} onDecrement={returnHandGem} onClear={clearHand} />
       <div className="page">
         <header className="hero">
@@ -275,59 +273,6 @@ function App() {
           <CardView key={`${card.level}-${card.color}-${card.points}-${JSON.stringify(card.cost)}`} card={card} hand={hand} />
         ))}
       </section>
-
-      <footer className="footer">
-        <div className="footer-content">
-          {/* Logo */}
-          <div className="footer-divider">
-            <div className="footer-line"></div>
-            <div className="footer-logo">
-              <svg width="32" height="14" viewBox="0 0 48 21" fill="none" xmlns="http://www.w3.org/2000/svg" className="footer-svg">
-                <path d="M24 12L32 11.7L24 0.4V12Z" fill="#0D79BE" />
-                <path d="M24 12L16 11.7L24 0.4V12Z" fill="#3790BB" />
-                <path d="M24 12L0.7 0L7 21L18 17L24 12Z" fill="#F69226" />
-                <path d="M24 12L47.3 0L41 21L30 17L24 12Z" fill="#D06A29" />
-                <path d="M24 12L41 21H7L24 12Z" fill="#ED7723" />
-              </svg>
-            </div>
-            <div className="footer-line"></div>
-          </div>
-          <div className="footer-links">
-            <div className="footer-made-by">
-              <span>made with ♥ by wunnle</span>
-            </div>
-            <span className="footer-separator"></span>
-            <div className="footer-nav">
-              <a
-                href="https://github.com/wunnle/catan-board-generator"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="footer-link-item"
-              >
-                view on GitHub
-              </a>
-              <span className="footer-dot">•</span>
-              <a
-                href="https://kafagoz.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="footer-link-item"
-              >
-                kafagoz.com
-              </a>
-              <span className="footer-dot">•</span>
-              <a
-                href="https://wunnle.dev/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="footer-link-item"
-              >
-                wunnle.dev
-              </a>
-            </div>
-          </div>
-        </div>
-      </footer>
       </div>
     </div>
   )
