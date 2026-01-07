@@ -299,7 +299,7 @@ function App() {
             <span className="footer-separator"></span>
             <div className="footer-nav">
               <a
-                href="https://github.com/wunnle/catan-board-generator"
+                href="https://github.com/wunnle/splendor-explorer"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="footer-link-item"
